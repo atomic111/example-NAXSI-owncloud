@@ -1,0 +1,9 @@
+### Load default rules
+include /etc/nginx/naxsi_core.rules;
+
+### Load specifc rules, customized rules
+include /etc/nginx/naxsi_spec.rules;
+
+### Load doxi rules -- Thank you -- Great work!!!
+include /etc/nginx/web_server.rules;
+include /etc/nginx/scanner.rules;

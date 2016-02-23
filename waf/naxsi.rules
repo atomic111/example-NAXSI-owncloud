@@ -1,0 +1,22 @@
+LearningMode; #Enables learning mode
+SecRulesEnabled;
+#SecRulesDisabled;
+DeniedUrl "/RequestDenied";
+
+## check rules
+CheckRule "$SQL >= 8" BLOCK;
+CheckRule "$RFI >= 8" BLOCK;
+CheckRule "$TRAVERSAL >= 4" BLOCK;
+CheckRule "$EVADE >= 4" BLOCK;
+CheckRule "$XSS >= 8" BLOCK;
+CheckRule "$UPLOAD >= 8" BLOCK;
+
+# see naxsi_spec.rules
+CheckRule "$UWA >= 8" BLOCK;
+CheckRule "$CUS >= 8" BLOCK;
+CheckRule "$ATTACK >= 8" BLOCK;
+
+# testing libinjection
+
+CheckRule "$LIBINJECTION_SQL >= 8" DROP;
+CheckRule "$LIBINJECTION_XSS >= 8" DROP;

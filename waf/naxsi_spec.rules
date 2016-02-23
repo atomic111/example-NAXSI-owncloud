@@ -1,0 +1,32 @@
+#implement specifc rules for your application
+
+# if your application is not writen in this language then just block such extensions
+MainRule  "str:.aspx" "msg:ASPX_file access" "mz:URL" "s:$CUS:8" id:60000  ;
+MainRule  "str:.cgi" "msg:CGI_file access" "mz:URL" "s:$CUS:8" id:60001  ;
+MainRule  "str:.asp" "msg:ASP_file access" "mz:URL" "s:$CUS:8" id:60002  ;
+#MainRule  "str:.php" "msg:PHP-file-access" "mz:URL" "s:$CUS:8" id:60003  ;
+
+
+# Block special LFI for owncloud
+MainRule  "str:/" "msg:Found / in Cookie, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60100  ;
+
+# %2fc is also include in a Cookie so i decided to prevent this with the linux path
+MainRule  "str:%2fbin" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60101  ;
+MainRule  "str:%2fboot" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60102  ;
+MainRule  "str:%2fdev" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60103  ;
+MainRule  "str:%2fetc" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60104  ;
+MainRule  "str:%2fhome" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60105  ;
+MainRule  "str:%2flib" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60106  ;
+MainRule  "str:%2flib64" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60107  ;
+MainRule  "str:%2fmedia" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60108  ;
+MainRule  "str:%2fmnt" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60109  ;
+MainRule  "str:%2fopt" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60110  ;
+MainRule  "str:%2fproc" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60111  ;
+MainRule  "str:%2froot" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60112  ;
+MainRule  "str:%2frun" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60113  ;
+MainRule  "str:%2fsbin" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60114  ;
+MainRule  "str:%2fsrv" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60115  ;
+MainRule  "str:%2fsys" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60116  ;
+MainRule  "str:%2ftmp" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60117  ;
+MainRule  "str:%2fusr" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60118  ;
+MainRule  "str:%2fvar" "msg:Found / in Cookie as Base64 encoded, could be LFI " "mz:$HEADERS_VAR:Cookie" "s:$CUS:8" id:60119  ;
