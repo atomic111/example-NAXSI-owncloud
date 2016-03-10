@@ -37,7 +37,7 @@ ENV BUILD_PATH /opt
 ENV PROXY_REDIRECT_IP 12.12.12.12
 ENV NGINX_VERSION 1.9.6
 ENV NAXSI_VERSION master
-ENV OPENSSL_VERSION 1.0.2f
+ENV OPENSSL_VERSION 1.0.2g
 ENV PCRE_VERSION 8.37
 ENV CLEAR_HEADER_VERSION 0.29
 
@@ -46,7 +46,7 @@ ENV CLEAR_HEADER_VERSION 0.29
 WORKDIR ${BUILD_PATH}
 
 RUN curl -O http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz && \
-    curl -O https://www.openssl.org/source/openssl-${OPENSSL_VERSION}.tar.gz && \
+    curl -O ftp://ftp.pca.dfn.de/pub/tools/net/openssl/source//openssl-${OPENSSL_VERSION}.tar.gz && \
     curl -O http://ftp.cs.stanford.edu/pub/exim/pcre/pcre-${PCRE_VERSION}.tar.gz && \
     curl -LO https://github.com/nbs-system/naxsi/archive/${NAXSI_VERSION}.tar.gz && \
     curl -LO https://github.com/openresty/headers-more-nginx-module/archive/v${CLEAR_HEADER_VERSION}.tar.gz
