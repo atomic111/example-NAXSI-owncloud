@@ -31,7 +31,7 @@ RUN apt-get update \
 
 # Install OwnCloud
 
-ENV OWNCLOUD_VERSION 8.2.2
+ENV OWNCLOUD_VERSION 9.0.0
 RUN curl https://download.owncloud.org/community/owncloud-${OWNCLOUD_VERSION}.tar.bz2 | tar jx -C /var/www/
 COPY occ.sh /usr/bin/occ
 
