@@ -25,7 +25,7 @@ MAINTAINER Patrick Meier  <patrick.meier111@gmail.com>
 # Install stuff - supervisor, nginx and php dependencies
 
 RUN apt-get update \
-    && apt-get install -y ffmpeg supervisor nginx nginx-extras php5 php5-gd php-xml-parser php5-intl php5-json php5-mcrypt php5-fpm php-apc php5-imap php5-mcrypt php5-curl php5-imagick php5-pgsql php5-mysql php5-sqlite php5-apcu smbclient curl libcurl3 bzip2 \
+    && apt-get install -y ffmpeg supervisor nginx nginx-extras php5 php5-gd php-xml-parser php5-intl php5-json php5-mcrypt php5-fpm php-apc php5-imap php5-mcrypt php5-curl php5-imagick php5-pgsql php5-mysql php5-sqlite php5-apcu smbclient curl libcurl3 bzip2 unzip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -54,12 +54,6 @@ RUN curl -Lo /var/www/owncloud/apps/${GALLERYPLUS_NAME} https://github.com/inter
 RUN unzip -d /var/www/owncloud/apps/ /var/www/owncloud/apps/${GALLERYPLUS_NAME}
 RUN mv /var/www/owncloud/apps/${GALLERYPLUS_UNPACK} /var/www/owncloud/apps/galleryplus
 RUN rm /var/www/owncloud/apps/${GALLERYPLUS_NAME}
-
-# Clean skeleton folder
-
-RUN rm -rf /var/www/owncloud/core/skeleton/Documents/
-RUN rm -rf /var/www/owncloud/core/skeleton/Photos/
-RUN rm -rf /var/www/owncloud/core/skeleton/ownCloudUserManual.pdf
 
   # Correct permissions
 
