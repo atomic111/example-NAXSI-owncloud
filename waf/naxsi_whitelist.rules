@@ -44,6 +44,8 @@
 #BasicRule  wl:1008 "mz:$URL:/index.php/apps/galleryplus/files/list|$ARGS_VAR:mediatypes";
 #BasicRule  wl:1008 "mz:$URL:/index.php/apps/galleryplus/thumbnails|$ARGS_VAR:ids";
 #BasicRule  wl:1009 "mz:$URL:/index.php/apps/files_pdfviewer/|$ARGS_VAR:file";
+#BasicRule  wl:1009 "mz:$URL:/|$BODY_VAR:requesttoken";
+#BasicRule  wl:1009 "mz:$URL:/index.php|$ARGS_VAR:requesttoken";
 #BasicRule  wl:1001,1009,1010,1011,1310,1311 "mz:$URL:/index.php/settings/personal/changepassword|$BODY_VAR:oldpassword";
 #BasicRule  wl:1001,1009,1010,1011,1310,1311 "mz:$URL:/index.php/settings/personal/changepassword|$BODY_VAR:personal-password";
 #BasicRule  wl:1001,1009,1010,1011,1310,1311 "mz:$URL:/index.php/settings/personal/changepassword|$BODY_VAR:personal-password-clone";

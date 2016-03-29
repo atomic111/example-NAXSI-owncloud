@@ -51,7 +51,7 @@ if [ ! -f /var/www/owncloud/config/config.php ]; then
 fi
 
 # BUG: https://forum.owncloud.org/viewtopic.php?t=30540&p=97096
-curl -o /var/www/owncloud/config/ca-bundle.crt https://raw.githubusercontent.com/owncloud/core/stable8.1/config/ca-bundle.crt
+#curl -o /var/www/owncloud/config/ca-bundle.crt https://raw.githubusercontent.com/owncloud/core/stable8.1/config/ca-bundle.crt
 
 # configure bigger filesize for upload
 #sed -i -e "s/^php_value upload_max_filesize\s*513M/php_value upload_max_filesize 10G/" /var/www/owncloud/.htaccess

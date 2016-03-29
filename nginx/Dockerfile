@@ -37,10 +37,23 @@ COPY occ.sh /usr/bin/occ
 
 # Install owncloud video plugin
 
-#COPY videos.tar.gz /var/www/owncloud/apps/
-#RUN tar xzf /var/www/owncloud/apps/videos.tar.gz -C /var/www/owncloud/apps/
-COPY files_videojs-sublime.tar.gz /var/www/owncloud/apps/
-RUN tar xzf /var/www/owncloud/apps/files_videojs-sublime.tar.gz -C /var/www/owncloud/apps/
+ENV VIDEOJS_NAME master.zip
+ENV VIDEOJS_UNPACK files_videoplayer-master
+
+RUN curl -Lo /var/www/owncloud/apps/${VIDEOJS_NAME} https://github.com/owncloud/files_videoplayer/archive/${VIDEOJS_NAME}
+RUN unzip -d /var/www/owncloud/apps/ /var/www/owncloud/apps/${VIDEOJS_NAME}
+RUN mv /var/www/owncloud/apps/${VIDEOJS_UNPACK} /var/www/owncloud/apps/files_videojs-sublime
+RUN rm /var/www/owncloud/apps/${VIDEOJS_NAME}
+
+# Install Galleryplus owncloud plugin
+
+ENV GALLERYPLUS_NAME stable9.zip
+ENV GALLERYPLUS_UNPACK galleryplus-stable9
+
+RUN curl -Lo /var/www/owncloud/apps/${GALLERYPLUS_NAME} https://github.com/interfasys/galleryplus/archive/${GALLERYPLUS_NAME}
+RUN unzip -d /var/www/owncloud/apps/ /var/www/owncloud/apps/${GALLERYPLUS_NAME}
+RUN mv /var/www/owncloud/apps/${GALLERYPLUS_UNPACK} /var/www/owncloud/apps/galleryplus
+RUN rm /var/www/owncloud/apps/${GALLERYPLUS_NAME}
 
 # Clean skeleton folder
 
