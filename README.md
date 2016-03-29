@@ -16,6 +16,7 @@ Also the repo includes simple backup and restore scripts.
 ## Prerequisites
 
 - Install Docker
+- Install docker-compose
 
 ## Usage
 
