@@ -14,6 +14,6 @@ echo "restore db backup" $1
 
 # for x86_64
 
-docker run --name restore_db --volumes-from owncloud-postgres-data -v $(pwd):/backup ubuntu:15.04 tar xzvf /backup/$1
+docker run --name restore_db --volumes-from owncloud_postgres_data_1 -v $(pwd):/backup ubuntu:15.04 tar xzvf /backup/$1
 
 docker rm restore_db
